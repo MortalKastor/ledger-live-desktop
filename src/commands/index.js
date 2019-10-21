@@ -26,6 +26,7 @@ import libcoreValidAddress from 'commands/libcoreValidAddress'
 import listenDevices from 'commands/listenDevices'
 import ping from 'commands/ping'
 import quitAndInstallElectronUpdate from 'commands/quitAndInstallElectronUpdate'
+import requireApp from 'commands/requireApp'
 import signTransaction from 'commands/signTransaction'
 import testApdu from 'commands/testApdu'
 import testCrash from 'commands/testCrash'
@@ -56,6 +57,7 @@ const all: Array<Command<any, any>> = [
   listenDevices,
   ping,
   quitAndInstallElectronUpdate,
+  requireApp,
   signTransaction,
   testApdu,
   testCrash,
