@@ -10,6 +10,7 @@ import firmwareMain from 'commands/firmwareMain'
 import firmwareRepair from 'commands/firmwareRepair'
 import flushDevice from 'commands/flushDevice'
 import getAddress from 'commands/getAddress'
+import getClientId from 'commands/getClientId'
 import getDeviceInfo from 'commands/getDeviceInfo'
 import getIsGenuine from 'commands/getIsGenuine'
 import getLatestFirmwareForDevice from 'commands/getLatestFirmwareForDevice'
@@ -24,6 +25,8 @@ import testApdu from 'commands/testApdu'
 import testCrash from 'commands/testCrash'
 import testInterval from 'commands/testInterval'
 import uninstallApp from 'commands/uninstallApp'
+import unwrapLiveConfig from 'commands/unwrapLiveConfig'
+import wrapLiveConfig from 'commands/wrapLiveConfig'
 import { commands as bridgeProxyCommands } from '../bridge/proxy'
 
 const all: Array<Command<any, any>> = [
@@ -35,6 +38,7 @@ const all: Array<Command<any, any>> = [
   firmwareRepair,
   flushDevice,
   getAddress,
+  getClientId,
   getDeviceInfo,
   getIsGenuine,
   getLatestFirmwareForDevice,
@@ -49,6 +53,8 @@ const all: Array<Command<any, any>> = [
   testCrash,
   testInterval,
   uninstallApp,
+  unwrapLiveConfig,
+  wrapLiveConfig,
 ]
 
 export const commandsById = {}
