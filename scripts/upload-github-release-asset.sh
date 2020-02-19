@@ -42,14 +42,20 @@ GH_REPO="$GH_API/repos/$owner/$repo"
 AUTH="Authorization: token $github_api_token"
 
 # github_api_token=$GH_TOKEN owner=LedgerHQ repo=ledger-live-desktop tag=v1.2.2 filename=./dist/electron-builder-debug.yml
-LATEST_RELEASE_ID=$(curl -sH "$AUTH" "$GH_API/repos/LedgerHQ/ledger-live-desktop/releases" | grep '"id":' | head -n 1 | sed -E 's/.*: (.*),/\1/')
+LATEST_RELEASE_ID=$(curl -sH "$AUTH" "$GH_REPO/releases" | grep '"id":' | head -n 1 | sed -E 's/.*: (.*),/\1/')
 
 # Validate token.
-curl -o /dev/null -sH "$AUTH" "$GH_REPO" || { echo "Error: Invalid repo, token or network issue!";  exit 1; }
+curl -o /dev/null -sH "$AUTH" "$GH_REPO" || {
+  echo "Error: Invalid repo, token or network issue!"
+  exit 1
+}
 
 # Get ID of the asset based on given filename.
 # shellcheck disable=SC2154
-[ "$LATEST_RELEASE_ID" ] || { echo "Error: Failed to get release id"; exit 1; }
+[ "$LATEST_RELEASE_ID" ] || {
+  echo "Error: Failed to get release id"
+  exit 1
+}
 
 # Upload asset
 echo "Uploading asset... "

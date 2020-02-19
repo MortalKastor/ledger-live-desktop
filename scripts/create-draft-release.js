@@ -7,7 +7,7 @@ const exec = util.promisify(require('child_process').exec)
 const octokit = require('@octokit/rest')()
 
 const repo = {
-  owner: 'LedgerHQ',
+  owner: 'MortalKastor',
   repo: 'ledger-live-desktop',
 }
 
