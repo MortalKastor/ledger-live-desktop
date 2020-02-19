@@ -9,8 +9,8 @@ source scripts/helpers/run-job.sh
 source scripts/helpers/display-env.sh
 
 if [ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]; then
-  echo "You are not on master. Exiting properly. (CI)"
-  exit 0
+  echo "You are not on master. But it's fine, it's a test."
+  # exit 0
 fi
 
 GH_TAG=$(git describe --exact-match --tags 2>/dev/null || echo '')
@@ -83,14 +83,14 @@ if [[ $(uname) == 'Linux' ]]; then
   scripts/upload-github-release-asset.sh \
     github_api_token="$GH_TOKEN" \
     owner=LedgerHQ \
-    repo=ledger-live-desktop \
+    repo=lld-v2 \
     tag="$GH_TAG" \
     filename="dist/ledger-live-desktop-$LEDGER_LIVE_VERSION-linux-x86_64.AppImage"
 
   scripts/upload-github-release-asset.sh \
     github_api_token="$GH_TOKEN" \
     owner=LedgerHQ \
-    repo=ledger-live-desktop \
+    repo=lld-v2 \
     tag="$GH_TAG" \
     filename="dist/latest-linux.yml"
 

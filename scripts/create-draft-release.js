@@ -8,7 +8,7 @@ const octokit = require('@octokit/rest')()
 
 const repo = {
   owner: 'LedgerHQ',
-  repo: 'ledger-live-desktop',
+  repo: 'lld-v2',
 }
 
 async function getTag() {
