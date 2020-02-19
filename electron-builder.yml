@@ -16,7 +16,8 @@ mac:
   entitlementsInherit: build/mac/entitlements.plist
   target:
     # - dmg
-    - zip
+    # - zip
+    - tar.gz
 
 appImage:
   systemIntegration: doNotAsk
