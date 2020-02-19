@@ -6,7 +6,7 @@ protocols:
     - ledgerhq
 
 afterSign: scripts/notarize-app.js
-afterAllArtifactBuild: scripts/notarize-dmg.js
+# afterAllArtifactBuild: scripts/notarize-dmg.js
 
 mac:
   artifactName: ${name}-${version}-${os}.${ext}
@@ -15,7 +15,7 @@ mac:
   entitlements: build/mac/entitlements.plist
   entitlementsInherit: build/mac/entitlements.plist
   target:
-    - dmg
+    # - dmg
     - zip
 
 appImage:
