@@ -20,7 +20,7 @@ linux:
         - x64
 
 win:
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  artifactName: ${name}-${version}-${os}.${ext}
   # icon: build/windows/app.ico
   verifyUpdateCodeSignature: false
   signAndEditExecutable: false

@@ -31,7 +31,7 @@ linux:
         - x64
 
 win:
-  artifactName: ${name}-${version}-${os}-${arch}.${ext}
+  artifactName: ${name}-${version}-${os}.${ext}
   icon: build/windows/app.ico
   certificateSubjectName: Ledger SAS
   certificateSha1: 7DD9ACB2EF0402883C65901EBBAFD06E5293D391
